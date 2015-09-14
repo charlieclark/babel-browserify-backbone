@@ -5,7 +5,6 @@ let state = new(Backbone.Model.extend({
 		section: null,
 		path: null
 	},
-	defaultPage: "home",
 	routes: {
 		//base routes
 		":page/:section/*path": "onRoute",
@@ -23,7 +22,7 @@ let state = new(Backbone.Model.extend({
 		};
 
 		if (!_.has(this.urlNames, this.unSingle(page))) {
-			this.navigate(this.defaultPage, null, null, true)
+			this.navigate(this.defaultPage || null, null, null, true)
 		} else {
 			this.set(obj);
 		}
@@ -107,6 +106,9 @@ let state = new(Backbone.Model.extend({
 			key = this.unSingle(key);
 			if(!this.urlNames[key]){
 				this.urlNames[key] = page.slug || key;
+			}
+			if(page.default){
+				this.defaultPage || null = key;
 			}
 		});
 
