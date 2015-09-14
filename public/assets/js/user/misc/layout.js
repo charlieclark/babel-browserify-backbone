@@ -1,5 +1,4 @@
 import state from "state";
-import pipe from "pipe";
 import {getSassVar} from "utils";
 
 let $el = null;

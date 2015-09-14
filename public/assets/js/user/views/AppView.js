@@ -73,7 +73,6 @@ let AppView = Marionette.LayoutView.extend({
 		let newPageView = this.createNextPage(pageKey);
 
 		Promise.all([this.hideCurrentPage(), newPageView.beforeCanShow()]).then(() => {
-			pipe.dispatch("postLoaded");
 			this.showPage(pageKey, newPageView);
 		});
 
@@ -126,11 +125,8 @@ let AppView = Marionette.LayoutView.extend({
 		let channel = $el.data("channel") || "global";
 		let arg = $el.data("arg") || "";
 			arg = arg.split(",");
-
-		console.log(cmd, channel, arg);
 		
 		Backbone.Radio.channel( channel ).trigger( cmd, ...arg );
-		// pipe.dispatch(cmd, ...arg)
 	}
 });
 

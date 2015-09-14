@@ -1,7 +1,5 @@
-export default class BasePageView extends Marionette.LayoutView {
-	constructor(){
-		this.className = "page-inner";
-	}
+var BasePageView =  Marionette.LayoutView.extend({
+	className : "page-inner",
 	animateIn() {
 		return new Promise((resolve,reject)=>{
 			TweenLite.fromTo(this.$el, 1, {
@@ -51,4 +49,6 @@ export default class BasePageView extends Marionette.LayoutView {
 			$(window).off("resize", this.resize);
 		}
 	}
-}
+});
+
+export default BasePageView;
