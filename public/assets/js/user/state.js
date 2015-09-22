@@ -108,7 +108,7 @@ let state = new(Backbone.Model.extend({
 				this.urlNames[key] = page.slug || key;
 			}
 			if(page.default){
-				this.defaultPage || null = key;
+				this.defaultPage = key;
 			}
 		});
 
