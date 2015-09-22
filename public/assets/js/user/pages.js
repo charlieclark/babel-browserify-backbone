@@ -7,6 +7,7 @@ export default {
 		view: HomePageView,
 		model: Backbone.Model,
 		inNav: true,
+		default: true,
 		options: {
 			tag: "",
 			type: ""

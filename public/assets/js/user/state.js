@@ -22,22 +22,25 @@ let state = new(Backbone.Model.extend({
 		};
 
 		if (!_.has(this.urlNames, this.unSingle(page))) {
-			this.navigate(this.defaultPage || null, null, null, true)
+			this.navigate(this.defaultPage, null, null, true)
 		} else {
 			this.set(obj);
 		}
 	},
-	navigate: function(page, section, path, reset) {
+	navigate: function(page, section, path, reset, noTrigger) {
 		let hash = this.getPath(page, section, path, reset);
 
 		Backbone.history.navigate(hash.url, {
-			trigger: true
+			trigger: noTrigger ? false : true
 		});
 
 		this.set(hash.stateSet);
 	},
 	back: function() {
 		Backbone.history.history.back()
+	},
+	home(){
+		state.navigate(this.defaultPage, null, null, true);
 	},
 	getPath: function(page, section, path, reset) {
 
