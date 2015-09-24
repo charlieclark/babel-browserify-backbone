@@ -1,7 +1,9 @@
 {
 	"desktop": [
-		// "lib/bower/jquery.js",
-		// "lib/bower/underscore.js",
+		"lib/bower/pixi.js",
+		"lib/bower/TweenMax.js"
+		// "lib/bower/jquery.js"
+		// "lib/bower/underscore.js"
 		// "lib/bower/backbone.js",
 		// "lib/bower/backbone.babysitter.js",
 		// "lib/bower/backbone.radio.js",
