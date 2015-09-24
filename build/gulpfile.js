@@ -21,4 +21,5 @@ require( "./gulp/sass" );
 require( "./gulp/watch" );
 require("./gulp/bower");
 require( "./gulp/build" );
+require( "./gulp/serve" );
 require( "./gulp/markdown" );

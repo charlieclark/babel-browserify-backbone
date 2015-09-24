@@ -22,7 +22,11 @@ gulp.task('init', function() {
 
 });
 
-gulp.task('release', ['vendor_scripts_min', 'user_scripts_min', 'minify-css'], function() {});
+gulp.task('dev', ['watch', 'serve'], function(){});
+
+gulp.task('release', ['vendor_scripts_min', 'user_scripts_min', 'minify-css'], function() {
+	gulp.start( 'serve-release' );
+});
 
 gulp.task('dist', ['release'], function() {
 
