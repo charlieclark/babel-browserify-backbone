@@ -3,6 +3,7 @@ var projectPath = buildPath.replace("build/", "");
 var rootPath = projectPath + "public/";
 var assetPath = rootPath + "assets/";
 var gulpPath = buildPath + "gulp/";
+var releasePath = projectPath + "release/";
 
 var paths = {
 
@@ -11,6 +12,7 @@ var paths = {
 	rootPath: rootPath,
 	assetPath: assetPath,
 	gulpPath: gulpPath,
+	releasePath: releasePath,
 
 	build: {
 		bower: buildPath + 'bower_components/',
@@ -40,7 +42,7 @@ var paths = {
 	},
 
 	//misc
-	noop: gulpPath + "other/noop.js"
+	noop: gulpPath + "other/noop.js",
 };
 
 module.exports = paths;
