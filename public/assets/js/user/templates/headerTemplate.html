@@ -1,9 +1,0 @@
-<ul>
-	<% _.each(pages, function(page, key){ %>
-		<% if(page.inNav){ %>
-			<li data-cmd="change:page" data-channel="navigation" data-arg="<%=key%>"><span><%= page.slug || key %></span></li>
-		<% } %>
-	<% }) %>
-</ul>
-
-<hr>
